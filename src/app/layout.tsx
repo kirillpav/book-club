@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Navbar from "./_components/Navbar";
+import { Separator } from "@/components/ui/separator";
 
 const geistSans = localFont({
 	src: "./fonts/GeistVF.woff",
@@ -28,6 +30,8 @@ export default function RootLayout({
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
+				<Navbar />
+				<Separator className="bg-black h-[1.5px]" />
 				{children}
 			</body>
 		</html>
