@@ -15,11 +15,14 @@ export default async function Books() {
 	}
 	return (
 		<>
-			<div>
+			{/* <div>
 				{books.map((book: Book) => (
-					<div key={book.id}>{book.title}</div>
+					<div>
+						<div key={book.id}>{book.title}</div>
+						<img src={book.cover} alt={book.title} />
+					</div>
 				))}
-			</div>
+			</div> */}
 		</>
 	);
 }
