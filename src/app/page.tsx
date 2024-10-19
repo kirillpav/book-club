@@ -6,7 +6,7 @@ export default function Home() {
 	return (
 		<div>
 			<Hero />
-			<Separator className="bg-black h-[1.5px]" />
+			<Separator className="bg-black" />
 			<Books />
 		</div>
 	);

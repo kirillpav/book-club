@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "./_components/Navbar";
 import { Separator } from "@/components/ui/separator";
 
+const erodeFont = localFont({ src: "./fonts/Erode-Variable.ttf" });
+
 const geistSans = localFont({
 	src: "./fonts/GeistVF.woff",
 	variable: "--font-geist-sans",
@@ -27,11 +29,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-			>
+			<body className={`${erodeFont.className}  antialiased`}>
 				<Navbar />
-				<Separator className="bg-black h-[1.5px]" />
+				<Separator className="bg-black" />
 				{children}
 			</body>
 		</html>

@@ -16,10 +16,7 @@ export default async function Books() {
 			<div className="flex flex-row">
 				{books.map((book: Book) => (
 					<div
-						className={`${book.id % 3 !== 2 ? "border-r border-black" : ""} 
-                    ${
-											book.id < books.length - 3 ? "border-b border-black" : ""
-										}`}
+						className={`border-r border-b hover:border-b-black`}
 						key={book.id}
 					>
 						<Card book={book} />
