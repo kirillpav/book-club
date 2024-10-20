@@ -40,7 +40,10 @@ export type Database = {
 					cover: string | null;
 					created_at: string;
 					description: string | null;
+					genre: string[] | null;
+					goodreads: string | null;
 					id: number;
+					quote: string | null;
 					rating: number | null;
 					read: boolean | null;
 					title: string | null;
@@ -50,7 +53,10 @@ export type Database = {
 					cover?: string | null;
 					created_at?: string;
 					description?: string | null;
+					genre?: string[] | null;
+					goodreads?: string | null;
 					id?: number;
+					quote?: string | null;
 					rating?: number | null;
 					read?: boolean | null;
 					title?: string | null;
@@ -60,7 +66,10 @@ export type Database = {
 					cover?: string | null;
 					created_at?: string;
 					description?: string | null;
+					genre?: string[] | null;
+					goodreads?: string | null;
 					id?: number;
+					quote?: string | null;
 					rating?: number | null;
 					read?: boolean | null;
 					title?: string | null;

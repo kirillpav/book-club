@@ -14,7 +14,7 @@ export default async function Books() {
 	return (
 		<>
 			<div className="container">
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-x divide-black">
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-x divide-black w-full">
 					{books.map((book: Book) => (
 						<div key={book.id}>
 							<Card book={book} />
