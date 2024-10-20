@@ -4,11 +4,7 @@ import "./globals.css";
 import Navbar from "./_components/Navbar";
 import { Separator } from "@/components/ui/separator";
 
-const erodeFont = localFont({ src: "./fonts/Erode-Variable.ttf" });
-
-const silkFlower = localFont({ src: "./fonts/SilkFlower.otf" });
-
-const fleuron = localFont({ src: "./fonts/FleuronRegular.otf" });
+const boskaSans = localFont({ src: "./fonts/Boska-Variable.ttf" });
 
 const geistSans = localFont({
 	src: "./fonts/GeistVF.woff",
@@ -33,7 +29,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${fleuron.className}  antialiased`}>
+			<body className={`${geistMono.className}  antialiased`}>
 				<Navbar />
 				<Separator className="bg-black" />
 				{children}
