@@ -4,13 +4,6 @@ import "./globals.css";
 import Navbar from "./_components/Navbar";
 import { Separator } from "@/components/ui/separator";
 
-const boskaSans = localFont({ src: "./fonts/Boska-Variable.ttf" });
-
-const geistSans = localFont({
-	src: "./fonts/GeistVF.woff",
-	variable: "--font-geist-sans",
-	weight: "100 900",
-});
 const geistMono = localFont({
 	src: "./fonts/GeistMonoVF.woff",
 	variable: "--font-geist-mono",

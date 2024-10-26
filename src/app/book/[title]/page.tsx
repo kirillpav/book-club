@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { createClient } from "@/utils/supabase/server";
-import Image from "next/image";
+
 import { ArrowUpRight } from "lucide-react";
-import { Dot } from "lucide-react";
-import Card from "@/app/_components/Card";
 
 export default async ({ params }: { params: { title: string } }) => {
 	const supabase = createClient();
@@ -21,7 +19,7 @@ export default async ({ params }: { params: { title: string } }) => {
 		.select("*")
 		.contains("genre", [book.genre[0]])
 		.neq("title", decodedTitle) // Exclude current book
-		.limit(4); // Limit to 4 related books
+		.limit(2); // Limit to 4 related books
 
 	if (error) {
 		console.log("Error fetching book: ", error);
