@@ -12,16 +12,12 @@ export default async function Books() {
 		return <p>Cannot find books</p>;
 	}
 	return (
-		<>
-			<div className="container">
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-x divide-black w-full">
-					{books.map((book: Book) => (
-						<div key={book.id}>
-							<Card book={book} />
-						</div>
-					))}
-				</div>
+		<div className="w-full min-h-screen bg-white">
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
+				{books.map((book: Book) => (
+					<Card key={book.id} book={book} />
+				))}
 			</div>
-		</>
+		</div>
 	);
 }
