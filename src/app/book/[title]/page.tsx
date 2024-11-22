@@ -45,13 +45,7 @@ export default async ({ params }: { params: { title: string } }) => {
 					</div>
 				</div>
 				<div className="absolute shadow-2xl top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
-					<a
-						href={book.goodreads}
-						className="flex flex-row items-center bg-transparent"
-					>
-						Goodreads <ArrowUpRight />{" "}
-					</a>
-					<img src={book.cover} alt="" className="h-[500px] " />
+					<img src={book.cover} alt="" className="h-[500px] rounded-md" />
 				</div>
 
 				<div className="w-1/2 bg-slate-50 relative">

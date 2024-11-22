@@ -1,3 +1,4 @@
+import Filter from "./_components/Filter";
 import Hero from "./_components/Hero";
 import Books from "./books/page";
 import { Separator } from "@/components/ui/separator";
