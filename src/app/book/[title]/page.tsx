@@ -70,7 +70,7 @@ export default async ({ params }: { params: { title: string } }) => {
 											<img
 												src={book.cover}
 												alt={book.title}
-												className="shadow-lg w-[160px] h-[240px]"
+												className="shadow-lg w-[160px] h-[240px] rounded-md"
 											/>
 										</div>
 

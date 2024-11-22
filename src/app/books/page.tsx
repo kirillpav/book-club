@@ -10,7 +10,10 @@ export default function Books() {
 	const supabase = createClientComponentClient();
 
 	const fetchBooks = async () => {
-		const { data, error } = await supabase.from("books").select("*");
+		const { data, error } = await supabase
+			.from("books")
+			.select("*")
+			.order("created_at", { ascending: false });
 		if (data && !error) {
 			setBooks(data);
 		} else {
@@ -22,6 +25,7 @@ export default function Books() {
 		fetchBooks();
 	}, []);
 
+	// Filtering out the deleted book for the UI
 	const handleDelete = (deletedBookId: string) => {
 		setBooks((prevBooks) =>
 			prevBooks.filter((book) => book.id !== deletedBookId)

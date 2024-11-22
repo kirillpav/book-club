@@ -10,11 +10,14 @@ export default function AddBook() {
 		description: "",
 		quote: "",
 		genre: "",
+		readingStatus: "want-to-read",
 	});
 	const [cover, setCover] = useState<File | null>(null);
 	const [loading, setLoading] = useState(false);
 
-	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+	const handleChange = (
+		e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+	) => {
 		const { name, value } = e.target;
 		setFormData((prev) => ({ ...prev, [name]: value }));
 	};
@@ -31,8 +34,10 @@ export default function AddBook() {
 
 		try {
 			let coverUrl = null;
+			// Proceed if file is uploaded
 			if (cover) {
 				const fileExt = cover.name.split(".").pop();
+				// Generate a random file name to avoid overwriting
 				const fileName = `${Math.random()}.${fileExt}`;
 				const { data: uploadData, error: uploadError } = await supabase.storage
 					.from("book-covers")
@@ -56,6 +61,7 @@ export default function AddBook() {
 				description: "",
 				quote: "",
 				genre: "",
+				readingStatus: "want-to-read",
 			});
 			setCover(null);
 			alert("Book added successfully!");
@@ -118,12 +124,24 @@ export default function AddBook() {
 					className="p-2 border-b border-black"
 					required
 				/>
+				<select
+					name="readingStatus"
+					value={formData.readingStatus}
+					onChange={handleChange}
+					className="p-2 border-b border-black"
+					required
+				>
+					<option value="read">Read</option>
+					<option value="want-to-read">Want to Read</option>
+					<option value="currently-reading">Currently Reading</option>
+				</select>
 				<input
 					type="file"
 					accept="image/*"
 					onChange={handleFileChange}
 					className="p-2 border-b border-black"
 				/>
+
 				<button
 					type="submit"
 					className="p-2 bg-black text-white disabled:bg-gray-500"

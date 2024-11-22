@@ -45,19 +45,20 @@ export default function Card({ book, onDelete }: CardProps) {
 						alt={book.title}
 						height={140}
 						width={200}
-						className="shadow-lg w-[200px] h-[320px] object-cover hover:scale-105 transition-all duration-300"
+						className="shadow-lg rounded-md w-[200px] h-[320px] object-cover hover:scale-105 transition-all duration-300"
 					/>
 					<div className="absolute left-2 bottom-2 z-10">
 						<button
 							onClick={handleDelete}
-							className="bg-red-500 text-white p-2 text-xs hover:bg-red-600 transition-colors"
+							className="bg-white text-black border border-black rounded-full p-2 text-xs hover:bg-gray-100 hover:text-red-500 transition-all duration-300"
 						>
 							<Trash />
 						</button>
 					</div>
 				</div>
-				<div className="mt-auto border-t border-black w-full p-4 bg-white flex flex-row justify-between items-center">
+				<div className="mt-auto border-t border-black w-full h-32 p-4 bg-white flex flex-row justify-between items-center">
 					<div>
+						<p className="text-xs text-gray-600">{book.readingStatus}</p>
 						<h3 className="text-lg font-semibold mb-1">{book.title}</h3>
 						<p className="text-gray-600 text-sm">{book.author}</p>
 					</div>
