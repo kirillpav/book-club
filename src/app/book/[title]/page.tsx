@@ -17,7 +17,7 @@ export default async ({ params }: { params: { title: string } }) => {
 	const { data: relatedBooks, error: relatedError } = await supabase
 		.from("books")
 		.select("*")
-		.contains("genre", [book.genre[0]])
+		.eq("genre", book.genre)
 		.neq("title", decodedTitle) // Exclude current book
 		.limit(2); // Limit to 4 related books
 
@@ -55,9 +55,9 @@ export default async ({ params }: { params: { title: string } }) => {
 				</div>
 
 				<div className="w-1/2 bg-slate-50 relative">
-					<div className="p-8 flex flex-row justify-center">
+					<div className="p-8 flex flex-row justify-center ml-32">
 						<h3 className="text-xl font-semibold text-center mb-6 pl-4">
-							More {book.genre[0]} books:
+							More {book.genre} books:
 						</h3>
 						<div className="grid grid-cols-1 md:grid-cols-1 gap-0 w-1/2">
 							{relatedBooks?.map((book) => (
