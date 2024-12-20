@@ -19,9 +19,7 @@ export default function Filter({
 
 	useEffect(() => {
 		const fetchGenres = async () => {
-			const { data, error } = await supabase
-				.from("books") // replace with your table name
-				.select("genre");
+			const { data, error } = await supabase.from("books").select("genre");
 
 			if (error) {
 				console.error("Error fetching genres:", error);
